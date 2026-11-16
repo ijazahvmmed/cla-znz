@@ -1,0 +1,92 @@
+/* Shared mechanics for both homepage options: reset, accessibility, motion start states, sliders. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img,svg,video{display:block;max-width:100%}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+em{font-style:italic}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;padding:12px 16px;background:#fff;color:#111;font-weight:600;border-radius:2px}
+.skip:focus{top:16px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* Lenis smooth scrolling */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+
+/* Photo frames */
+.frame{position:relative;overflow:hidden}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+
+/* Heading lines (masked rise) */
+.line{display:block}
+.line > span{display:block}
+
+/* Motion start states. The "anim" class is only present when scripts run and the visitor allows motion. */
+html.anim .line{overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+html.anim .line > span{transform:translateY(112%)}
+html.anim [data-reveal="fade"],html.anim [data-hero-fade]{opacity:0}
+html.anim [data-reveal="img"]{clip-path:inset(100% 0 0 0)}
+html.anim [data-draw] :is(path,rect,circle,line,ellipse){stroke-dasharray:1;stroke-dashoffset:1}
+
+/* Before / after slider */
+.ba{position:relative;overflow:hidden;--pos:50%;background:#222}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.ba__before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba__line{position:absolute;top:0;bottom:0;left:var(--pos);width:1px;background:#fff;pointer-events:none}
+.ba__knob{position:absolute;top:50%;left:var(--pos);width:60px;height:60px;border-radius:50%;transform:translate(-50%,-50%);background:#fff;color:#111;display:grid;place-items:center;pointer-events:none;box-shadow:0 6px 30px rgba(0,0,0,.25)}
+.ba__knob svg{width:26px;height:12px}
+.ba__tag{position:absolute;bottom:18px;padding:7px 12px;font-size:13px;font-weight:500;background:rgba(12,14,12,.62);color:#fff;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);pointer-events:none}
+.ba__tag--l{left:18px}
+.ba__tag--r{right:18px}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.ba:focus-within .ba__knob{outline:2px solid #fff;outline-offset:4px}
+
+/* Reading progress hairline (added by script) */
+.progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:70;transform:scaleX(0);transform-origin:left;background:var(--brass,var(--bronze,#888));pointer-events:none}
+
+/* Current section in the header */
+.nav__links a.is-current::after{transform:scaleX(1);transform-origin:left}
+
+/* Small responses to the pointer */
+.ba__knob{transition:scale .45s cubic-bezier(.2,.7,.2,1)}
+.film__play{transition:scale .55s cubic-bezier(.2,.7,.2,1),background .4s}
+.film__play::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid rgba(255,255,255,.7);opacity:0;pointer-events:none}
+.logos li{transition:background .45s,color .45s}
+.steps li{transition:padding-left .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes ring{from{opacity:.7;scale:1}to{opacity:0;scale:1.5}}
+@media (hover:hover) and (pointer:fine){
+  .ba:hover .ba__knob{scale:1.1}
+  .ba:active .ba__knob{scale:.94}
+  .film:hover .film__play{scale:1.08;background:rgba(255,255,255,.16)}
+  .film:hover .film__play::after{animation:ring 1.7s ease-out infinite}
+  .logos li:hover{background:rgba(127,127,127,.08);color:inherit}
+  .steps li:hover{padding-left:12px}
+}
+
+/* Mobile menu panel */
+.menu{position:fixed;inset:0;z-index:49;display:none;flex-direction:column;justify-content:center;gap:6px;padding:96px var(--pad) var(--pad)}
+html.menu-open .menu{display:flex}
+html.menu-open{overflow:hidden}
+.menu a{display:block;padding:10px 0}
+.menu-btn{display:none;height:44px;padding:0 4px;font-weight:500;font-size:15px}
+
+/* Preview-only switcher between the two options */
+.switch{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:60;white-space:nowrap;display:flex;align-items:center;gap:10px;padding:9px 14px;font:500 13px/1 system-ui,sans-serif;background:rgba(15,17,15,.86);color:#f1eee6;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 24px rgba(0,0,0,.2)}
+.switch a{text-decoration:underline;text-underline-offset:3px}
+.switch span{opacity:.65}
+
+@media (max-width:899px){
+  .menu-btn{display:inline-flex;align-items:center}
+  .switch{padding:8px 12px;font-size:12px;gap:8px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}

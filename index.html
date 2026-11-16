@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANZ Landscaping | Two homepage directions</title>
+<meta name="description" content="Two clearly different homepage options for the new ANZ Landscaping website, both built from the Website Direction answers.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#F3F1EC;color:#16271E;font:400 17px/1.6 'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,dl,dd{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+header{padding:clamp(40px,6vw,88px) 0 clamp(28px,4vw,56px)}
+.kicker{font-size:15px;font-weight:500;color:#5A5C54;margin-bottom:18px}
+h1{font:500 clamp(40px,6vw,88px)/.96 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;max-width:16ch}
+h1 em{font-weight:400}
+.intro{margin-top:22px;max-width:60ch;color:#5A5C54}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,36px)}
+.opt{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(28,30,26,.14);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.opt:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(28,30,26,.12)}
+.mini{position:relative;aspect-ratio:16/10;overflow:hidden}
+.mini img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.opt:hover .mini img{transform:scale(1.03)}
+/* miniature of option A */
+.mini--a{background:#EEEBE4;display:flex;flex-direction:column;padding:5% 5% 4%}
+.mini--a b{font:500 clamp(22px,3.3vw,50px)/.94 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;margin-bottom:4%}
+.mini--a b em{font-weight:400}
+.mini--a span{position:relative;flex:1;overflow:hidden}
+/* miniature of option B */
+.mini--b{background:#10231A;color:#EAE6DB;display:flex;align-items:flex-end;padding:5%}
+.mini--b::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,20,14,.35),rgba(7,20,14,.1) 40%,rgba(7,20,14,.84))}
+.mini--b b{position:relative;z-index:1;font:400 clamp(26px,3.9vw,60px)/.92 'Instrument Serif',Georgia,serif;letter-spacing:-.02em}
+.opt__body{padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:14px;flex:1}
+.opt__body h2{font:500 clamp(28px,2.8vw,40px)/1 'Cormorant Garamond',Georgia,serif}
+.opt__body h2 small{font:500 14px/1 'Hanken Grotesk',sans-serif;color:#5A5C54;margin-left:10px}
+.opt__body ul{display:grid;gap:8px;color:#45473F;font-size:16px}
+.opt__body li{padding-left:18px;position:relative}
+.opt__body li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:#875A30}
+.go{margin-top:auto;padding-top:10px;display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
+.go svg{width:18px;height:10px;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.opt:hover .go svg{transform:translateX(5px)}
+section.why{padding:clamp(56px,8vw,112px) 0 clamp(40px,6vw,80px)}
+.why h2{font:500 clamp(30px,3.6vw,52px)/1 'Cormorant Garamond',Georgia,serif;letter-spacing:-.015em;margin-bottom:clamp(24px,3vw,40px)}
+.why dl{display:grid;grid-template-columns:minmax(220px,5fr) 7fr;border-top:1px solid rgba(28,30,26,.16)}
+.why dt,.why dd{padding:16px 0;border-bottom:1px solid rgba(28,30,26,.16)}
+.why dt{font-weight:500;padding-right:28px}
+.why dd{color:#45473F}
+footer{padding:0 0 56px;color:#5A5C54;font-size:14px}
+@media (max-width:820px){
+  .opts{grid-template-columns:1fr}
+  .why dl{grid-template-columns:1fr}
+  .why dt{border-bottom:0;padding-bottom:0}
+  .why dd{padding-top:6px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="kicker">ANZ Landscaping · new website</p>
+    <h1>Two homepage directions, <em>one to choose</em></h1>
+    <p class="intro">You asked to see two clearly different homepage options and then pick one. Both are built from the same Website Direction answers and carry the same content, so the choice is about look and feel. Open each one and scroll it from top to bottom.</p>
+  </header>
+
+  <div class="opts">
+    <a class="opt" href="option-a.html">
+      <div class="mini mini--a" aria-hidden="true">
+        <b>Landscapes built for <em>villas</em> and <em>workplaces</em></b>
+        <span><img src="https://images.unsplash.com/photo-1692736933760-8a8a9b8c1b6f?auto=format&fit=crop&w=1200&q=70" alt=""></span>
+      </div>
+      <div class="opt__body">
+        <h2>Option A <small>Daylight</small></h2>
+        <ul>
+          <li>Light, limestone-coloured pages with deep green bands for projects and the quote form</li>
+          <li>The headline sits on open space and one project photograph opens beneath it</li>
+          <li>Fine bronze plan drawings beside each service, editorial project grid</li>
+          <li>Photographs unveil from below as you scroll</li>
+        </ul>
+        <span class="go">Open option A <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+
+    <a class="opt" href="option-b.html">
+      <div class="mini mini--b" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1721989518229-3e84837fc398?auto=format&fit=crop&w=1200&q=70" alt="">
+        <b>Landscapes built for <em>villas</em> and <em>workplaces</em></b>
+      </div>
+      <div class="opt__body">
+        <h2>Option B <small>Evening</small></h2>
+        <ul>
+          <li>Deep green, evening-toned pages with warm light sections for projects, clients and the company</li>
+          <li>One project photograph fills the whole first screen and opens in panels</li>
+          <li>Brass contour lines, a service photograph that changes as you read</li>
+          <li>Completed projects travel sideways as you scroll</li>
+        </ul>
+        <span class="go">Open option B <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></span>
+      </div>
+    </a>
+  </div>
+
+  <section class="why">
+    <h2>How your answers shaped both options</h2>
+    <dl>
+      <dt>Who it speaks to</dt>
+      <dd>The headline names both audiences, villas and workplaces, and every service says who it is for.</dd>
+      <dt>Experienced and trustworthy in the first seconds</dt>
+      <dd>A finished project is the first thing on screen, with calm type and no clutter.</dd>
+      <dt>Request a quote or consultation</dt>
+      <dd>It is the one main button, always in the header, on the first screen, and the page ends on the quote form.</dd>
+      <dt>Most visible: projects, construction, indoor greenery</dt>
+      <dd>Two services only, then a completed-projects gallery that mixes villa gardens with office greenery.</dd>
+      <dt>Gamlaa's calm, premium feel, but clearly different</dt>
+      <dd>The same calm pace, with a deeper, quieter green than Gamlaa's, no lime, no rounded cards. Stone, deep green and a single metal accent, with square edges.</dd>
+      <dt>A mix of light and dark</dt>
+      <dd>The dark is a deep green, not black. Option A is light with deep green bands. Option B is deep green with light sections.</dd>
+      <dt>Luxurious, very simple and clean. Not too plain, not too flashy</dt>
+      <dd>Large elegant headings, generous space, one accent colour. Movement is smooth and purposeful, and nothing blinks, spins or pops.</dd>
+      <dt>Elegant headings with easy-to-read text</dt>
+      <dd>A serif for headings and a plain sans-serif for everything you read at length.</dd>
+      <dt>Real photos mixed with designed graphics</dt>
+      <dd>Photographs lead. Option A adds plan drawings, option B adds contour lines, both drawn in as you scroll.</dd>
+      <dt>Noticeable, creative movement that stays easy to use</dt>
+      <dd>The biggest moments are where you asked for them: how the first screen appears and how photographs reveal while scrolling.</dd>
+      <dt>First screen, then services</dt>
+      <dd>One completed landscape project opens the page, and what ANZ does comes directly after it.</dd>
+      <dt>What builds trust</dt>
+      <dd>Finished-project photos, a before-and-after slider, a place for client names or logos, and a frame for a film from site.</dd>
+      <dt>Materials you have</dt>
+      <dd>Slots are ready for your project photos, before-and-after pairs and team photos. The photographs shown now are stand-ins.</dd>
+    </dl>
+  </section>
+</main>
+<footer class="wrap">Design preview. Photographs are stand-ins from Unsplash and will be replaced with ANZ project photographs. Client logos, the site film and contact details are added once supplied.</footer>
+</body>
+</html>
